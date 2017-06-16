@@ -5,4 +5,5 @@
 layout: home
 title: Accueil
 permalink: /
+sidebar: true
 ---

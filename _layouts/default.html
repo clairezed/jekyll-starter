@@ -3,17 +3,28 @@
 
   {% include head.html %}
 
-  <body>
+  <body {% unless page.sidebar %}class="single"{% endunless %}>
+    <div id="wrapper">
 
-    {% include header.html %}
+      {% include header.html %}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      <main id="main" aria-label="Content">
+        <!-- <div class="wrapper"> -->
         {{ content }}
-      </div>
-    </main>
+        <!-- </div> -->
+      </main>
+      {% if page.sidebar %}
+        {% include sidebar.html %}
+      {% else %}
+          {% include footer.html %}
+      {% endif %}
 
-    {% include footer.html %}
+    </div>
+    <script src="{{ "/assets/js/jquery.min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+    <script src="{{ "/assets/js/skel.min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+    <script src="{{ "/assets/js/util.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+    <!--[if lte IE 8]><script src="{{ "/assets/js/ie/respond.min.js" | prepend: site.baseurl }}" type="text/javascript"></script><![endif]-->
+    <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}" type="text/javascript"></script>
 
   </body>
 

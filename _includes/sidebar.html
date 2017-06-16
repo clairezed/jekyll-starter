@@ -1,0 +1,45 @@
+<section id="sidebar">
+
+  <!-- Intro -->
+    <section id="intro">
+      <a href="#" class="logo"><img src="assets/img/logo.jpg" alt="" /></a>
+      <header>
+        <h2>{{ site.title | escape }}</h2>
+        <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+      </header>
+    </section>
+
+  <!-- Mini Posts -->
+    <section>
+      <div class="mini-posts">
+        {% for post in site.posts %}
+          {% include components/mini-post.html %}
+        {% endfor %}
+
+      </div>
+    </section>
+
+  <!-- Posts List -->
+    <section>
+      <ul class="posts">
+        {% for post in site.posts %}
+          <li>
+            {% include components/xs-post.html %}
+          </li>
+        {% endfor %}
+
+      </ul>
+    </section>
+
+  <!-- About -->
+    <section class="blurb">
+      <h2>A propos</h2>
+      <p>{{ site.description | escape }}</p>
+      <ul class="actions">
+        <li><a href="#" class="button">Learn More</a></li>
+      </ul>
+    </section>
+
+    {% include footer.html %}
+
+</section>
