@@ -16,3 +16,7 @@ Votre site est visible sur [localhost:4000](localhost:4000)
 
 - Un dossier pour les pages, que je n'aime pas voir traîner (`_pages`). Du coup, ne pas oublier de mettre le permalink dans le frontmatter.
 - un fichier de `_config` par environnement
+
+## Templates
+
+- [CloudCannon/edition-jekyll-template](https://github.com/CloudCannon/edition-jekyll-template) sur la branche `edition-jekyll-template`

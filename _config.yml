@@ -4,6 +4,21 @@ email: clairezuliani@gmail.com
 description: My own jekyll starter
 baseurl: "/jekyll-starter" # the subpath of your site, e.g. /blog
 url: "https://clairezed.github.io" # the base hostname & protocol for your site
+google_analytics_key:
+show_full_navigation: true
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: My own jekyll starter
+author:
+  name:
+  email: clairezuliani@gmail.com
+  twitter: ZooletteDesBois
+social:
+  name: Edition Template
+  links:
+    - https://github.com/CloudCannon/edition-jekyll-template
+
 
 # Social settings ------------------------------------
 github_username: clairezed
@@ -11,8 +26,11 @@ twitter_username: ZooletteDesBois
 
 # Build settings --------------------------------------
 markdown: kramdown
-# theme: minima
+permalink: pretty
+
 gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-feed
 exclude:
   - Gemfile
@@ -35,3 +53,34 @@ locale: fr
 # Includes ----------------------------------------------
 include:
   - _pages
+
+# collections -----------------------------------------
+collections:
+  docs:
+    title: Documentation
+    permalink: /:path/
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      seo:
+        type: Article
+      _comments:
+        category: Group navigation links with this field
+        order: Used to sort links in the navigation
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      _comments:
+        type: Marks the impact of this release
